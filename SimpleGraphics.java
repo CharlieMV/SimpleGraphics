@@ -31,7 +31,7 @@ public class SimpleGraphics extends GraphicsProgram {
 	private GOval circle[] = new GOval[5];
 	private final double RADIUS = 200;
 	
-	private GRect brick[][] = new GRect[10][10];
+	private GRect brick[][] = new GRect[10][11];
 	private final double SIDE = 20;
 	
 	/**	The init() method is executed before the run() method.
@@ -64,12 +64,12 @@ public class SimpleGraphics extends GraphicsProgram {
 		
 		/*	DRAWING THE BRICKS */
 		/*	Vertical */
-		for (int i = 0; i < 10; i++) {
+		for (int i = 1; i < 11; i++) {
 			/*	Horizontal */
 			for (int j = 0; j < i; j++) {
 				/*	New rect in each array slot */
-				brick[j][i] = new GRect(getWidth() / 2 - 25 * i, i * 20,
-				20, 50);
+				brick[j][i] = new GRect(getWidth() / 2 - 25 * i + 50 * 
+				j, 200 - i * 20, 50, 20);
 				brick[j][i].setFilled(false);
 				add(brick[j][i]);
 			}
